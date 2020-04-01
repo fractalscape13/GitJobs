@@ -57,9 +57,34 @@ body {
 
 body {
   background-color: pink;
+  background-image: radial-gradient(pink, rgb(231, 138, 153));
 }
 
-button {
-  border: 5px solid black;
+input {
+  background-color: transparent;
+  border: 1px solid #111111;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: none;
+  text-align: center;
+  margin: 5px;
+}
+
+.btn {
+  border: 3px solid ivory;
   border-radius: 15px;
+  background-image: radial-gradient(rgb(94, 92, 92), rgb(18, 18, 155));
+  color: ivory;
+  margin: 25px;
+  font-size: 140%;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+ol#reviewsList {
+  max-height: 800px;
+  overflow-y: auto;
 }
