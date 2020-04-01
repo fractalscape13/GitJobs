@@ -23,10 +23,9 @@ namespace TravelClient.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost]
     public IActionResult Search(string country, string city, string destination)
     {
-      var searchResults = Review.Search(destination, city, country);
+      var searchResults = Review.Search(country, city, destination);
       return View("Index", searchResults);
     }
 
