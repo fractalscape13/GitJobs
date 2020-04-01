@@ -2,16 +2,15 @@
   ViewData["Title"] = "Details";
 }
 
-<h1>REVIEW DETAILS</h1>
+<h1>@Model.Destination</h1>
 <ul>
   @* <li>ID: @Model.ReviewId</li> *@
   <li>Author: @Model.Author</li>
-  <li>Destination: @Model.Destination</li>
   <li>Rating: @Model.Rating</li>
   <li>Description: @Model.Description</li>
   <li>City: @Model.City</li>
   <li>Country: @Model.Country</li>
 </ul>
 
-<a href="/Reviews/Edit/@(Model.ReviewId)">EDIT REVIEW</a><br>
-<a href="/Reviews/Delete/@(Model.ReviewId)">DELETE REVIEW</a>
+<a class="btn" href="/Reviews/Edit/@(Model.ReviewId)">EDIT REVIEW</a><br>
+<a class="btn" href="/Reviews/Delete/@(Model.ReviewId)">DELETE REVIEW</a>
