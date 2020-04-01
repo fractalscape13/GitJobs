@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TravelClient.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TravelClient.Controllers
 {
+  [Authorize]
   public class ReviewsController : Controller
   {
+    [AllowAnonymous]
     public IActionResult Index()
     {
       var allReviews = Review.GetAll();
@@ -23,12 +21,14 @@ namespace TravelClient.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public IActionResult Search(string country, string city, string destination)
     {
       var searchResults = Review.Search(country, city, destination);
       return View("Index", searchResults);
     }
 
+    [AllowAnonymous]
     public IActionResult Details(int id)
     {
       var review = Review.GetDetails(id);

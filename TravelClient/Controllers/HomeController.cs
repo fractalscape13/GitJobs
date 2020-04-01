@@ -12,7 +12,7 @@ namespace TravelClient.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Reviews");
+            return View();
         }
 
         public IActionResult Privacy()
