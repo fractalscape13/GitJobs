@@ -23,6 +23,13 @@ namespace TravelClient.Controllers
       return RedirectToAction("Index");
     }
 
+    [HttpPost]
+    public IActionResult Search(string country, string city, string destination)
+    {
+      var searchResults = Review.Search(destination, city, country);
+      return View("Index", searchResults);
+    }
+
     public IActionResult Details(int id)
     {
       var review = Review.GetDetails(id);

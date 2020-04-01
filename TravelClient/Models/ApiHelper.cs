@@ -13,6 +13,14 @@ namespace TravelClient.Models
       return response.Content;
     }
 
+    public static async Task<string> Search(string country, string city, string destination)
+    {
+      RestClient client = new RestClient("http://localhost:5004/api");
+      RestRequest request = new RestRequest($"reviews?country={country}&city={city}&destination={destination}", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
     public static async Task<string> Get(int id)
     {
       RestClient client = new RestClient("http://localhost:5004/api");
@@ -21,7 +29,7 @@ namespace TravelClient.Models
       return response.Content;
     }
 
-    // do we need to add a header for authorization?? 
+    // do we need to add a header for authorization to the following three methods?? 
     public static async Task Post(string newReview)
     {
       RestClient client = new RestClient("http://localhost:5004/api");
