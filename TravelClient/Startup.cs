@@ -15,7 +15,7 @@ namespace TravelClient
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
-            
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json"); //this line replaces .AddEnvironmentVariables();
