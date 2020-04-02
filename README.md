@@ -89,7 +89,7 @@ _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 _Run this MVC application by entering the following command in Terminal (macOS) or PowerShell (Windows) at the root of the TravelClient directory:_
 * ``dotnet run`` or ``dotnet watch run``
 
-_To view/edit the source code of this application, open the contents of the TravelClient.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the PierreTreats.Solution directory)._
+_To view/edit the source code of this application, open the contents of the TravelClient.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the TravelClient.Solution directory)._
 
 ## Technologies Used
 
