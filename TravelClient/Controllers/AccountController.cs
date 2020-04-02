@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using TravelClient.Models;
 using System.Threading.Tasks;
 using TravelClient.ViewModels;
+using System;
 
 namespace TravelClient.Controllers
 {
@@ -32,13 +33,27 @@ namespace TravelClient.Controllers
     [HttpPost]
     public async Task<ActionResult> Register (RegisterViewModel model)
     {
-      var user = new ApplicationUser { UserName = model.UserName };
-      IdentityResult result = await _userManager.CreateAsync(user, model.Password);
-      if (result.Succeeded)
+      try
       {
-        return RedirectToAction("Index");
+        if (String.IsNullOrWhiteSpace(model.UserName) || String.IsNullOrWhiteSpace(model.Password))
+        {
+          throw new System.InvalidOperationException("invalid input");
+        }
+        else
+        {
+          var user = new ApplicationUser { UserName = model.UserName };
+          IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+          if (result.Succeeded)
+          {
+            return RedirectToAction("Login");
+          }
+          else
+          {
+            return View();
+          }
+        }
       }
-      else
+      catch (Exception ex)
       {
         return View();
       }
@@ -52,12 +67,19 @@ namespace TravelClient.Controllers
     [HttpPost]
     public async Task<ActionResult> Login(LoginViewModel model)
     {
-      Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: true, lockoutOnFailure: false);
-      if (result.Succeeded)
+      try
       {
-        return RedirectToAction("Index");
+        Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: true, lockoutOnFailure: false);
+        if (result.Succeeded)
+        {
+          return RedirectToAction("Index");
+        }
+        else
+        {
+          return View();
+        }
       }
-      else
+      catch (Exception ex)
       {
         return View();
       }
