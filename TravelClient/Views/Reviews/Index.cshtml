@@ -2,33 +2,40 @@
   ViewData["Title"] = "Home Page";
 }
 
-<h1>SEARCH REVIEWS:</h1>
-<form action="/Reviews/Search" method="get">
-  <label for="destination">Destination:</label>
-  <input id="destination" name="destination" type="text"><br>
-  <label for="city">City:</label>
-  <input id="city" name="city" type="text"><br>
-  <label for="country">Country:</label>
-  <input id="country" name="country" type="text"><br>
-  <button type="submit" class="btn">SEARCH</button>
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <h1>SEARCH REVIEWS:</h1>
+    <hr/>
+    <form action="/Reviews/Search" method="get">
+      <label for="destination">Destination:</label>
+      <input id="destination" name="destination" type="text"><br>
+      <label for="city">City:</label>
+      <input id="city" name="city" type="text"><br>
+      <label for="country">Country:</label>
+      <input id="country" name="country" type="text"><br>
+      <button type="submit" class="btn">SEARCH</button>
+    </form>
 
-@Html.ActionLink("ADD NEW REVIEW", "Create", "Reviews", null, new { @class="btn" })
+    @Html.ActionLink("ADD NEW REVIEW", "Create", "Reviews", null, new { @class="btn" })
+  </div>
 
-<h1>REVIEWS:</h1>
-<ol id="reviewsList">
-@foreach (Review review in Model)
-{
-  <ul>
-    <li>Author: @review.Author</li>
-    <li>Destination: @review.Destination</li>
-    <li>Rating: @review.Rating</li>
-    <li>Description: @review.Description</li>
-    <li>City: @review.City</li>
-    <li>Country: @review.Country</li>
-    <li> <a href="/Reviews/Details/@(review.ReviewId)">DETAILS</a>
-</li>
-  </ul>
-  <br>
-}
-</ol>
+  <div class="col-md-6">
+    <h1>REVIEWS:</h1>
+    <hr/>
+    <ol id="reviewsList">
+    @foreach (Review review in Model)
+    {
+      <ul>
+        <li>Author: @review.Author</li>
+        <li>Destination: @review.Destination</li>
+        <li>Rating: @review.Rating</li>
+        <li>Description: @review.Description</li>
+        <li>City: @review.City</li>
+        <li>Country: @review.Country</li>
+        <li><a href="/Reviews/Details/@(review.ReviewId)">VIEW DETAILS</a></li>
+      </ul>
+      <br>
+    }
+    </ol>
+  </div>
+</div>

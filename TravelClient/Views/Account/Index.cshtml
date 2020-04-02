@@ -1,23 +1,24 @@
 @{
-  Layout = "_Layout";
+    ViewData["Title"] = "Account";
 }
 
-@using System.Security.Claims
-
-<h1>Account Info</h1>
+<h1>ACCOUNT INFO</h1>
 <hr />
-
-@if (User.Identity.IsAuthenticated)
-{
-  <h3>Hello @User.Identity.Name!</h3>
-  <h2>@Html.ActionLink("See All Reviews", "Index", "Reviews")</h2>
-  @using (Html.BeginForm("LogOff", "Account"))
+<div class="box">
+  @if (User.Identity.IsAuthenticated)
   {
-    <input type="submit" class="btn" value="Log out" />
+    <h3>Hello @User.Identity.Name!</h3>
+    @Html.ActionLink("See All Reviews", "Index", "Reviews", null, new { @class="btn" })
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btn" value="Log out" />
+    }
   }
-}
-else
-{
-  <p class="btn">@Html.ActionLink("Register", "Register")</p>
-  <p class="btn">@Html.ActionLink("Log in", "Login")</p>
-}
+  else
+  {
+    <div class="two-buttons">
+      @Html.ActionLink("REGISTER", "Register", "Account", null , new { @class="btn" })
+      @Html.ActionLink("LOG IN", "Login", "Account", null, new { @class="btn" })
+    </div>
+  }
+</div>

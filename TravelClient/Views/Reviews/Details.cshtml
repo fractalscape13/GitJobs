@@ -3,14 +3,20 @@
 }
 
 <h1>@Model.Destination</h1>
-<ul>
-  @* <li>ID: @Model.ReviewId</li> *@
-  <li>Author: @Model.Author</li>
-  <li>Rating: @Model.Rating</li>
-  <li>Description: @Model.Description</li>
-  <li>City: @Model.City</li>
-  <li>Country: @Model.Country</li>
-</ul>
+<hr/>
 
-<a class="btn" href="/Reviews/Edit/@(Model.ReviewId)">EDIT REVIEW</a><br>
-<a class="btn" href="/Reviews/Delete/@(Model.ReviewId)">DELETE REVIEW</a>
+<div class="box">
+  <ul>
+    <li>Author: @Model.Author</li>
+    <li>Rating: @Model.Rating</li>
+    <li>Description: @Model.Description</li>
+    <li>City: @Model.City</li>
+    <li>Country: @Model.Country</li>
+  </ul>
+
+  <div class="three-buttons">
+    @Html.ActionLink("EDIT REVIEW", "Edit", "Reviews", new { id = Model.ReviewId}, new { @class="btn" })
+    @Html.ActionLink("DELETE REVIEW", "Delete", "Reviews", new { id = Model.ReviewId}, new { @class="btn" })<br>
+    @Html.ActionLink("RETURN TO REVIEWS", "Index", "Reviews", null, new { @class="btn" })
+  </div>
+</div>
