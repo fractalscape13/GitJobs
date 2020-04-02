@@ -21,6 +21,7 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -44,7 +45,9 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-family: 'Montserrat', sans-serif;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -56,8 +59,9 @@ body {
 }
 
 body {
-  background-color: pink;
-  background-image: radial-gradient(pink, rgb(231, 138, 153));
+  background-color: rgb(131,58,180);
+  background-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  text-align: center;
 }
 
 input {
@@ -73,7 +77,7 @@ input {
 .btn {
   border: 3px solid ivory;
   border-radius: 15px;
-  background-image: radial-gradient(rgb(94, 92, 92), rgb(18, 18, 155));
+  background-image: radial-gradient(rgb(138, 137, 137), rgb(18, 18, 155));
   color: ivory;
   margin: 25px;
   font-size: 140%;
@@ -87,4 +91,54 @@ input {
 ol#reviewsList {
   max-height: 800px;
   overflow-y: auto;
+}
+
+nav {
+  background-color: rgb(250, 195, 118);
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin-top: 1%;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #f5f5f5;
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: #111111;
+}
+
+li {
+  text-align: left;
+}
+
+li a {
+  color: #111111;
+}
+
+li a:hover {
+  color: #f5f5f5;
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.404);
+  margin: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 20px;
+  padding-top: 40px;
+  border-radius: 15px;
+}
+
+.two-buttons, .three-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-buttons a {
+  width: 45%;
+}
+
+.three-buttons a {
+  width: 30%;
 }
