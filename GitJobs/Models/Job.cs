@@ -13,6 +13,7 @@ namespace GitJobs.Models
     public string Location { get; set; }
     public string Title { get; set; }
     public string Url { get; set; }
+    public int UserId { get; set; }
 
     public static List<Job> GetAll()
     {
