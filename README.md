@@ -1,12 +1,12 @@
-# Travel Review MVC Application
+# GitJobs
 
-#### _MVC application for interacting with Travel API_
+#### _MVC application for searching GitHubs Jobs API_
 
-#### By: **Michelle Morin, Joseph Wangemann, Jonathan Carlos, Kristina Hengster Tintor**, April 1-2, 2020
+#### By: **Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov**, April 7, 2020
 
 ## Description
 
-_This MVC application interacts with a custom-built Travel API, and allows users to GET, POST, PUT, and DELETE reviews about various travel destinations around the world._
+_This MVC application ._
 
 ## Specification user stories:
 | Specification | Example Input | Example Output |
@@ -108,4 +108,4 @@ _To view/edit the source code of this application, open the contents of the Trav
 
 Licensed under the MIT license.
 
-&copy; 2020 - Michelle Morin, Joseph Wangemann, Jonathan Carlos, Kristina Hengster Tintor
+&copy; 2020 - Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov
