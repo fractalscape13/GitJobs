@@ -2,11 +2,11 @@
   ViewData["Title"] = "Home Page";
 }
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-6">
-    <h1>SEARCH REVIEWS:</h1>
+    <h1>SEARCH JOBS:</h1>
     <hr/>
-    <form action="/Reviews/Search" method="get">
+    <form action="/Jobs/Search" method="get">
       <label for="destination">Destination:</label>
       <input id="destination" name="destination" type="text"><br>
       <label for="city">City:</label>
@@ -16,26 +16,26 @@
       <button type="submit" class="btn">SEARCH</button>
     </form>
 
-    @Html.ActionLink("ADD NEW REVIEW", "Create", "Reviews", null, new { @class="btn" })
+    @Html.ActionLink("ADD NEW JOB", "Create", "Jobs", null, new { @class="btn" })
   </div>
 
   <div class="col-md-6">
-    <h1>REVIEWS:</h1>
+    <h1>Jobs:</h1>
     <hr/>
-    <ol id="reviewsList">
-    @foreach (Review review in Model)
+    <ol id="jobsList">
+    @foreach (Job job in Model)
     {
       <ul>
-        <li>Author: @review.Author</li>
-        <li>Destination: @review.Destination</li>
-        <li>Rating: @review.Rating</li>
-        <li>Description: @review.Description</li>
-        <li>City: @review.City</li>
-        <li>Country: @review.Country</li>
-        <li><a href="/Reviews/Details/@(review.ReviewId)">VIEW DETAILS</a></li>
+        @* <li>Author: @job.Author</li>
+        <li>Destination: @job.Destination</li>
+        <li>Rating: @job.Rating</li>
+        <li>Description: @job.Description</li>
+        <li>City: @job.City</li>
+        <li>Country: @job.Country</li> *@
+        <li><a href="/Jobs/Details/@(job.JobId)">VIEW DETAILS</a></li>
       </ul>
       <br>
     }
     </ol>
   </div>
-</div>
+</div> -->
