@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Account";
+}
+
+<h1>ACCOUNT INFO</h1>
+<hr />
+<div class="box">
+  @if (User.Identity.IsAuthenticated)
+  {
+    //Show list of user's saved jobs
+    <h3>Hello @User.Identity.Name!</h3>
+    @Html.ActionLink("See All Reviews", "Index", "Reviews", null, new { @class="btn" })
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btn" value="Log out" />
+    }
+  }
+  else
+  {
+    <div class="two-buttons">
+      @Html.ActionLink("REGISTER", "Register", "Account", null , new { @class="btn" })
+      @Html.ActionLink("LOG IN", "Login", "Account", null, new { @class="btn" })
+    </div>
+  }
+</div>

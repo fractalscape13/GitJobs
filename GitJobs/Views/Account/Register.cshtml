@@ -1,0 +1,26 @@
+@{
+  ViewData["Title"] = "Register";
+}
+
+@using GitJobs.ViewModels
+@model RegisterViewModel
+
+<h1>REGISTER NEW USER</h1>
+<hr/>
+<div class="box">
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+    @Html.LabelFor(user => user.UserName)
+    @Html.TextBoxFor(user=> user.UserName)<br>
+
+    @Html.LabelFor(user=> user.Password)
+    @Html.PasswordFor(user=> user.Password)<br>
+
+    @Html.LabelFor(user=> user.ConfirmPassword)
+    @Html.PasswordFor(user=> user.ConfirmPassword)<br>
+
+    <input class="btn" type="submit" value="REGISTER" />
+  }
+  <h2>HAVE AN ACCOUNT? PLEASE LOG IN</h2>
+  @Html.ActionLink("LOG IN", "Login", "Account", null, new { @class="btn" })
+</div>
