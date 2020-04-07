@@ -4,6 +4,15 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using System.Security.Claims;
+
 namespace GitJobs.Models
 {
   public class Job
@@ -13,7 +22,18 @@ namespace GitJobs.Models
     public string Location { get; set; }
     public string Title { get; set; }
     public string Url { get; set; }
-    public int UserId { get; set; }
+    public ApplicationUser User { get; set; }
+    
+    // public virtual ICollection<Job> Jobs { get; set; }
+
+    public Job(string description, string location, string title, string url)
+    {
+      this.Description = description;
+      this.Location = location;
+      this.Title = title;
+      this.Url = url;
+    }
+
 
     public static List<Job> GetAll()
     {
