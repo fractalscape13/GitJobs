@@ -9,7 +9,7 @@
   {
     //Show list of user's saved jobs
     <h3>Hello @User.Identity.Name!</h3>
-    @Html.ActionLink("See All Reviews", "Index", "Reviews", null, new { @class="btn" })
+    @Html.ActionLink("See All Jobs", "Index", "Jobs", null, new { @class="btn" })
     @using (Html.BeginForm("LogOff", "Account"))
     {
       <input type="submit" class="btn" value="Log out" />

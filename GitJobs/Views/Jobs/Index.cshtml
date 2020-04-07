@@ -1,23 +1,23 @@
 @{
   ViewData["Title"] = "Home Page";
 }
-
-<!-- <div class="row">
+<div class="row">
   <div class="col-md-6">
     <h1>SEARCH JOBS:</h1>
-    <hr/>
-    <form action="/Jobs/Search" method="get">
-      <label for="destination">Destination:</label>
-      <input id="destination" name="destination" type="text"><br>
-      <label for="city">City:</label>
-      <input id="city" name="city" type="text"><br>
-      <label for="country">Country:</label>
-      <input id="country" name="country" type="text"><br>
+      <hr/>
+      <form action="/Jobs/Search" method="get">
+      <label for="description">Description:</label>
+      <input id="description" name="description" type="text"><br>
+      <label for="title">Title:</label>
+      <input id="title" name="title" type="text"><br>
+      <label for="location">Location:</label>
+      <input id="location" name="location" type="text"><br>
       <button type="submit" class="btn">SEARCH</button>
-    </form>
-
-    @Html.ActionLink("ADD NEW JOB", "Create", "Jobs", null, new { @class="btn" })
+      </form>
+      <br>
   </div>
+
+
 
   <div class="col-md-6">
     <h1>Jobs:</h1>
@@ -26,16 +26,23 @@
     @foreach (Job job in Model)
     {
       <ul>
-        @* <li>Author: @job.Author</li>
-        <li>Destination: @job.Destination</li>
-        <li>Rating: @job.Rating</li>
-        <li>Description: @job.Description</li>
-        <li>City: @job.City</li>
-        <li>Country: @job.Country</li> *@
-        <li><a href="/Jobs/Details/@(job.JobId)">VIEW DETAILS</a></li>
+        <li>Title: @job.Title</li>
+        <li>Location: @job.Location</li>
+        <li><a href="@job.Url" target="_blank">View Posting</a></li>
+        
       </ul>
+      
+      @using (Html.BeginForm("Create", "Jobs", FormMethod.Post))
+      {
+        @Html.Hidden("tit", @job.Title)
+        @Html.Hidden("desc", @job.Description)
+        @Html.Hidden("loc", @job.Location)
+        @Html.Hidden("ur", @job.Url)
+        
+        <input type="submit" value="Add this job" class="btn"/>
+      } 
       <br>
     }
     </ol>
   </div>
-</div> -->
+</div>
