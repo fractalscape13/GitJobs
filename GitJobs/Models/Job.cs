@@ -6,64 +6,62 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GitJobs.Models
 {
-  public class Review
+  public class Job
   {
-    public int ReviewId { get; set; }
-    public string Author { get; set; }
-    public string Destination { get; set; }
-    public int Rating { get; set; }
+    public int JobId { get; set; }
     public string Description { get; set; }
-    public string City { get; set; }
-    public string Country { get; set; }
+    public string Location { get; set; }
+    public string Title { get; set; }
+    public string Url { get; set; }
 
-    public static List<Review> GetAll()
+    public static List<Job> GetAll()
     {
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<Review> reviewList = JsonConvert.DeserializeObject<List<Review>>(jsonResponse.ToString());
+      List<Job> jobList = JsonConvert.DeserializeObject<List<Job>>(jsonResponse.ToString());
 
-      return reviewList;
+      return jobList;
     }
 
-    public static List<Review> Search(string country, string city, string destination)
+    public static List<Job> Search(string description, string location, string title)
     {
-      var apiCallTask = ApiHelper.Search(country, city, destination);
+      var apiCallTask = ApiHelper.Search(description, location, title);
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<Review> reviewList = JsonConvert.DeserializeObject<List<Review>>(jsonResponse.ToString());
+      List<Job> jobList = JsonConvert.DeserializeObject<List<Job>>(jsonResponse.ToString());
 
-      return reviewList;
+      return jobList;
     }
 
-    public static Review GetDetails(int id)
+    public static Job GetDetails(int id)
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse =JsonConvert.DeserializeObject<JObject>(result);
-      Review review = JsonConvert.DeserializeObject<Review>(jsonResponse.ToString());
+      Job job = JsonConvert.DeserializeObject<Job>(jsonResponse.ToString());
 
-      return review;
+      return job;
     }
 
-    public static void Post(Review review)
-    {
-      string jsonReview = JsonConvert.SerializeObject(review);
-      var apiCallTask = ApiHelper.Post(jsonReview);
-    }
+    // public static void Post(Job job)
+    // {
+    //   string jsonJob = JsonConvert.SerializeObject(job);
+    //   var apiCallTask = ApiHelper.Post(jsonJob);
+    // }
 
-    public static void Put(Review review)
-    {
-      string jsonReview = JsonConvert.SerializeObject(review);
-      var apiCallTask = ApiHelper.Put(review.ReviewId, jsonReview);
-    }
+    // public static void Put(Job job)
+    // {
+    //   string jsonJob = JsonConvert.SerializeObject(job);
+    //   var apiCallTask = ApiHelper.Put(job.JobId, jsonJob);
+    // }
 
-    public static void Delete(int id)
-    {
-      var apiCallTask = ApiHelper.Delete(id);
-    }
+    // public static void Delete(int id)
+    // {
+    //   var apiCallTask = ApiHelper.Delete(id);
+    // }
   }
 }
