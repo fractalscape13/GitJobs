@@ -1,8 +1,8 @@
 # GitJobs
 
-#### _MVC application for searching GitHubs Jobs API_
+#### _MVC application for searching GitHub's Jobs API_
 
-#### By: **Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov**, April 7, 2020
+#### By: **Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov**, April 7-9, 2020
 
 ## Description
 
@@ -11,16 +11,12 @@ _This MVC application ._
 ## Specification user stories:
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
-| If user visits '/' root route, the application displays a splash page with links to '/Reviews' and '/Users' | user visits '/' route | application displays homepage |
-| Application allows a user to register for an account with Identity | user clicks "login/register" option on splash page, then completes form at '/Account/Register' | application creates new user account and redirects to '/Login' |
-| Application allows a registered user to login | registered user clicks "log in" option at '/Account' | application redirects to '/Account/Login' |
-| Application allows a registered user to logout | registered user clicks "logout" option at '/Account' | application logs out of user account |
-| Only registered, logged-in users are able to create, update, and delete reviews | user is not logged in and/or not registered and clicks "add review", "edit review", or "delete review" | user redirected to login page |
-| If user visits '/Reviews' route, the application displays all reviews in the database, ordered from highest rated to lowest rated | user visits '/Reviews' | application displays list of all reviews in order of rating |
-| If a registered user clicks "add new review" link at '/Reviews', the application redirects to a form ('/Reviews/Create') for adding a new review | registered user clicks "add new review" | the application redirects to form at 'Reviews/Create' |
-| When a registered user submits the new review form, the application adds the new review to the reviews table of the travel database and redirects to '/Reviews' | registered user submits new treat form | the application adds new treat to treats table and redirects to '/Reviews' |
-| A registered user can delete a review from the list of all reviews | registered user selects "delete review" option | application deletes review from database |
-| A registered user can edit a review from the list of all reviews | registered user selects "edit review" | application redirects to edit form |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
 ## Setup/Installation Requirements
 
@@ -70,39 +66,57 @@ _Add the MySQL environment variable to the System PATH. Instructions for Windows
 
 _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``cd desktop``
-* ``git clone`` followed by the URL to this repository
-* ``cd TravelClient.Solution/TravelClient``
-
-_Confirm that you have navigated to the TravelClient directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
-
-## Clone the Travel API repository and run the Travel API
-
-_Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
-* ``cd ~``
-* ``cd desktop``
-* ``git clone https://github.com/fractalscape13/TravelApi.Solution``
-* ``cd TravelApi.Solution/TravelApi``
+* ``git clone https://github.com/fractalscape13/GitJobs``
+* ``cd GitJobs/GitJobs``
+* ``dotnet ef database update``
 * ``dotnet run`` or ``dotnet watch run``
+
+
+_Confirm that you have navigated to the GitJobs directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
 ## Run this MVC application in another Terminal or PowerShell window
 
-_Run this MVC application by entering the following command in Terminal (macOS) or PowerShell (Windows) at the root of the TravelClient directory:_
+_Run this MVC application by entering the following command in Terminal (macOS) or PowerShell (Windows) at the root of the GitJobs directory:_
 * ``dotnet run`` or ``dotnet watch run``
 
-_To view/edit the source code of this application, open the contents of the TravelClient.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the TravelClient.Solution directory)._
+_To view/edit the source code of this application, open the contents of the GitJobs directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the GitJobs directory)._
+
+
+ACCOUNT
+```
+GET /account
+GET /account/register
+POST /account/register
+GET /account/login
+POST /account/login
+GET /account/savedjobs
+DELETE /account/delete/{jobId}
+```
+
+JOBS
+```
+GET /jobs
+GET /jobs/search
+```
+
+POSITIONS 
+```
+GET /positions.json
+GET /positions/ID.json
+```
 
 ## Technologies Used
 
 * Git
 * C#
-* Visual Studio Code 1.43.1
-* dotnet script 0.50.1
+* .NET Core 2.2
 * MySQL 8.0.15
 * ASP.NET Core MVC 2.2
 * Entity Framework Core 2.2
+* Identity
 * RestSharp version 106.6.10
 * Newtonsoft.Json version 12.0.2
-* Travel API version 1.0 (https://github.com/fractalscape13/TravelApi.Solution)
+* GitHub Jobs API (https://jobs.github.com/api)
 
 ## License
 
