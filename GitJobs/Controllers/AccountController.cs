@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GitJobs.Controllers
@@ -118,6 +119,21 @@ namespace GitJobs.Controllers
     {
       var thisJob = _db.Jobs.FirstOrDefault(job => job.JobId == jobId);
       _db.Jobs.Remove(thisJob);
+      _db.SaveChanges();
+      return RedirectToAction("SavedJobs");
+    }
+
+    [Authorize]
+    public ActionResult Edit(int id)
+    {
+      var thisJob = _db.Jobs.FirstOrDefault(job => job.JobId == id);
+      return View(thisJob);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Job job)
+    {
+      _db.Entry(job).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("SavedJobs");
     }
