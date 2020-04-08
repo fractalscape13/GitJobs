@@ -1,29 +1,27 @@
-@* @{
+@{
   ViewData["Title"] = "Create";
 }
+@Model
 
-<h1>NEW REVIEW:</h1>
+<h1>SAVE THIS JOB:</h1>
 <hr/>
 <div class="box">
-  <form action="/reviews/create" method="post">
-    <label for="author">Author:</label>
-    <input id="author" name="author" type="text">
+  @using (Html.BeginForm("Create", "Jobs", FormMethod.Post))
+  {
+
+    <label for="tit">Title:</label>
+    <input id="tit" name="tit" type="text" value=@Model.Title>
+    <label for="loc">Location:</label>
+    <input id="loc" name="loc" type="text" value="@Model.Location">
+    <label for="desc">Description:</label>
+    <input id="desc" name="desc" type="text" value="@Model.Description">
+    <label for="ur">Url:</label>
+    <input id="ur" name="desc" type="text" value="@Model.Url">
+    <label for="sta">Application Status:</label>
+    <input id="sta" name="sta" type="text"><br>
+    <label for="pri">Priority Level (1-5):</label>
+    <input id="pri" name="pri" type="text">
     <br>
-    <label for="destination">Destination:</label>
-    <input id="destination" name="destination" type="text">
-    <br>
-    <label for="rating">Rating:</label>
-    <input id="rating" name="rating" type="number">
-    <br>
-    <label for="description">Description:</label>
-    <input id="description" name="description" type="text">
-    <br>
-    <label for="city">City:</label>
-    <input id="city" name="city" type="text">
-    <br>
-    <label for="country">Country:</label>
-    <input id="country" name="country" type="text">
-    <br>
-    <button type="submit" class="btn">ADD REVIEW</button>
-  </form>
-</div> *@
+    <button type="submit" class="btn">SAVE THIS JOB</button>
+  }
+</div>

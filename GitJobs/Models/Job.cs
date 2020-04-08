@@ -22,16 +22,18 @@ namespace GitJobs.Models
     public string Location { get; set; }
     public string Title { get; set; }
     public string Url { get; set; }
+    public string Status { get; set; }
+    public int Priority { get; set; }
     public ApplicationUser User { get; set; }
     
-    // public virtual ICollection<Job> Jobs { get; set; }
-
-    public Job(string description, string location, string title, string url)
+    public Job(string description, string location, string title, string url, string status, int priority)
     {
       this.Description = description;
       this.Location = location;
       this.Title = title;
       this.Url = url;
+      this.Status = status;
+      this.Priority = priority;
     }
 
 
@@ -67,22 +69,5 @@ namespace GitJobs.Models
 
       return job;
     }
-
-    // public static void Post(Job job)
-    // {
-    //   string jsonJob = JsonConvert.SerializeObject(job);
-    //   var apiCallTask = ApiHelper.Post(jsonJob);
-    // }
-
-    // public static void Put(Job job)
-    // {
-    //   string jsonJob = JsonConvert.SerializeObject(job);
-    //   var apiCallTask = ApiHelper.Put(job.JobId, jsonJob);
-    // }
-
-    // public static void Delete(int id)
-    // {
-    //   var apiCallTask = ApiHelper.Delete(id);
-    // }
   }
 }
