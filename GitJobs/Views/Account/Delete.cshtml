@@ -1,0 +1,17 @@
+@{
+  ViewData["Title"] = "SavedJobs";
+}
+
+@model GitJobs.Models.Job
+
+<h2>Are you sure you want to delete this job?</h2>
+
+@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)<br>
+@Html.DisplayNameFor(model => model.Location): @Html.DisplayFor(model => model.Location)
+@using (Html.BeginForm())
+{
+  @Html.Hidden("jobId", @Model.JobId)
+  <input type="submit" value="Delete" class="btn btn-default"/>
+}
+
+@Html.ActionLink("Back To Saved Jobs", "SavedJobs", null, new { @class="btn" })
