@@ -4,6 +4,11 @@ using GitJobs.Models;
 using System.Threading.Tasks;
 using GitJobs.ViewModels;
 using System;
+using System.Security.Claims;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+
 
 namespace GitJobs.Controllers
 {
@@ -90,6 +95,31 @@ namespace GitJobs.Controllers
     {
       await _signInManager.SignOutAsync();
       return RedirectToAction("Index");
+    }
+
+    [Authorize]
+    public async Task<ActionResult> SavedJobs()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      List<Job> model = _db.Jobs.Where(job => job.User == currentUser).ToList();
+      return View(model);
+    }
+
+    [Authorize]
+    public ActionResult Delete(int id)
+    {
+      var thisJob = _db.Jobs.FirstOrDefault(job => job.JobId == id);
+      return View(thisJob);
+    }
+    
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int jobId)
+    {
+      var thisJob = _db.Jobs.FirstOrDefault(job => job.JobId == jobId);
+      _db.Jobs.Remove(thisJob);
+      _db.SaveChanges();
+      return RedirectToAction("SavedJobs");
     }
   }
 }

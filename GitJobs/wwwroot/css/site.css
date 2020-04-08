@@ -5,6 +5,10 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-size: 150%;
+  background: -webkit-linear-gradient(rgb(247, 246, 246), rgb(14, 13, 13));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Sticky footer styles
@@ -59,15 +63,16 @@ body {
 }
 
 body {
-  background-color: rgb(131,58,180);
+  background-color: rgba(253,29,29,1);
   background-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   text-align: center;
 }
 
 input {
-  background-color: transparent;
+  background-color: black;
+  color: rgba(252,176,69,1);
   border: 1px solid #111111;
-  border-radius: 12px;
+  border-radius: 15px;
   outline: none;
   box-shadow: none;
   text-align: center;
@@ -96,6 +101,7 @@ ol#reviewsList {
 nav {
   background-color: rgb(250, 195, 118);
   margin-bottom: 30px;
+  border-bottom: 2px solid black;
 }
 
 h1 {
@@ -103,9 +109,6 @@ h1 {
   text-align: center;
   font-size: 2.5em;
   font-weight: bolder;
-  /* color: #f5f5f5;
-  -webkit-text-stroke-width: 0.75px;
-  -webkit-text-stroke-color: #111111; */
 }
 
 li {
@@ -141,4 +144,32 @@ li a:hover {
 
 .three-buttons a {
   width: 30%;
+}
+
+h1 {
+  background: -webkit-linear-gradient(rgb(250, 101, 101), rgb(3, 3, 3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* below is for social sharing buttons */
+
+.socialsharing {
+  text-align: center;
+
+  a {
+      display: inline-block;
+      padding: .7em;
+      line-height: 0;
+      margin-bottom: 2em;
+  }
+
+  path {
+      fill: gray;
+  }
+
+  svg {
+      width: 24px;
+      height: 24px;
+  }
 }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
+using System.Collections.Generic;
 
 namespace GitJobs.Controllers
 {
@@ -27,6 +28,7 @@ namespace GitJobs.Controllers
       return View(allJobs);
     }
 
+    // [Authorize]
     // public IActionResult Create()
     // {
        
