@@ -1,0 +1,34 @@
+@{
+  ViewData["Title"] = "SavedJobs";
+}
+
+
+<h1>YOUR SAVED JOBS</h1>
+<hr />
+<div class="box">
+  @if (User.Identity.IsAuthenticated)
+  {
+    //Show list of user's saved jobs
+    <h3>Hello @User.Identity.Name!</h3>
+
+
+    @foreach (Job job in Model)
+    {
+      <ul>
+        <li>Title: @job.Title</li>
+        <li>Location: @job.Location</li>
+        <li><a href="@job.Url" target="_blank">View Posting</a></li>
+        <p>@Html.ActionLink("Delete this job", "Delete", new { id = job.JobId })</p>
+
+        <!-- @using (Html.BeginForm("Delete", "Delete"))
+        {
+          @Html.Hidden("jobId", @job.JobId)
+          <input type="submit" value="Delete this job" class="btn"/>
+        } -->
+        <hr>
+      </ul>
+    }
+
+  }
+  @Html.ActionLink("See All Jobs", "Index", "Jobs", null, new { @class="btn" })
+</div>
