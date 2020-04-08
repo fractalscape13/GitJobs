@@ -69,9 +69,10 @@ body {
 }
 
 input {
-  background-color: transparent;
+  background-color: black;
+  color: rgba(252,176,69,1);
   border: 1px solid #111111;
-  border-radius: 12px;
+  border-radius: 15px;
   outline: none;
   box-shadow: none;
   text-align: center;
