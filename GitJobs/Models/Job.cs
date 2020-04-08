@@ -26,6 +26,10 @@ namespace GitJobs.Models
     public int Priority { get; set; }
     public ApplicationUser User { get; set; }
     
+    public Job()
+    {
+      
+    }
     public Job(string description, string location, string title, string url, string status, int priority)
     {
       this.Description = description;

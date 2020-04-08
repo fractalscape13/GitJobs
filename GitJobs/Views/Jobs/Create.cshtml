@@ -1,7 +1,6 @@
 @{
   ViewData["Title"] = "Create";
 }
-@Model
 
 <h1>SAVE THIS JOB:</h1>
 <hr/>
@@ -10,18 +9,17 @@
   {
 
     <label for="tit">Title:</label>
-    <input id="tit" name="tit" type="text" value=@Model.Title>
+    <input class="createform" id="tit" name="tit" type="text" value="@ViewBag.Tit"><br>
     <label for="loc">Location:</label>
-    <input id="loc" name="loc" type="text" value="@Model.Location">
+    <input class="createform" id="loc" name="loc" type="text" value="@ViewBag.Location"><br>
     <label for="desc">Description:</label>
-    <input id="desc" name="desc" type="text" value="@Model.Description">
+    <input class="createform" id="desc" name="desc" type="text" value="@ViewBag.Description"><br>
     <label for="ur">Url:</label>
-    <input id="ur" name="desc" type="text" value="@Model.Url">
+    <input class="createform" id="ur" name="ur" type="text" value="@ViewBag.Url"><br>
     <label for="sta">Application Status:</label>
-    <input id="sta" name="sta" type="text"><br>
+    <input class="createform" id="sta" name="sta" type="text"><br>
     <label for="pri">Priority Level (1-5):</label>
-    <input id="pri" name="pri" type="text">
-    <br>
+    <input class="createform" id="pri" name="pri" type="text"><br>
     <button type="submit" class="btn">SAVE THIS JOB</button>
   }
 </div>

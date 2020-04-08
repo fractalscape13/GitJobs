@@ -19,12 +19,6 @@
         <li>Location: @job.Location</li>
         <li><a href="@job.Url" target="_blank">View Posting</a></li>
         <p>@Html.ActionLink("Delete this job", "Delete", new { id = job.JobId })</p>
-
-        <!-- @using (Html.BeginForm("Delete", "Delete"))
-        {
-          @Html.Hidden("jobId", @job.JobId)
-          <input type="submit" value="Delete this job" class="btn"/>
-        } -->
         <hr>
       </ul>
     }
