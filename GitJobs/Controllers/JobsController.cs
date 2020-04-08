@@ -29,9 +29,13 @@ namespace GitJobs.Controllers
     }
 
     [Authorize]
-    public IActionResult Create(Job model)
+    public IActionResult Create(string title1, string location1, string description1, string url1)
     {
-      return View(model);
+      ViewBag.Tit = title1;
+      ViewBag.Location = location1;
+      ViewBag.Description = description1;
+      ViewBag.Url = url1;
+      return View();
     }
 
     [HttpPost]
