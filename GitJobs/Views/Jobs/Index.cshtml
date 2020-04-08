@@ -32,12 +32,9 @@
         
       </ul>
       
-      @using (Html.BeginForm("Create", "Jobs", FormMethod.Post))
+      @using (Html.BeginForm("Create", "Jobs", FormMethod.Get))
       {
-        @Html.Hidden("tit", @job.Title)
-        @Html.Hidden("desc", @job.Description)
-        @Html.Hidden("loc", @job.Location)
-        @Html.Hidden("ur", @job.Url)
+        @Html.Hidden("model", @job)
         
         <input type="submit" value="Add this job" class="btn"/>
       } 

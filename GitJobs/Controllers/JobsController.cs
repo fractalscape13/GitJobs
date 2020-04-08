@@ -28,19 +28,18 @@ namespace GitJobs.Controllers
       return View(allJobs);
     }
 
-    // [Authorize]
-    // public IActionResult Create()
-    // {
-       
-    //   return View();
-    // }
+    [Authorize]
+    public IActionResult Create(Job model)
+    {
+      return View(model);
+    }
 
     [HttpPost]
-    public async Task<ActionResult> Create(string desc, string loc, string tit, string ur)
+    public async Task<ActionResult> Create(string desc, string loc, string tit, string ur, string sta, int pri)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      Job newJob = new Job(desc, loc, tit, ur);
+      Job newJob = new Job(desc, loc, tit, ur, sta, pri);
       newJob.User = currentUser;
       _db.Jobs.Add(newJob);
       _db.SaveChanges();
