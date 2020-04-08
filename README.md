@@ -14,9 +14,6 @@ _This MVC application ._
 |  |  |  |
 |  |  |  |
 |  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 
 ## Setup/Installation Requirements
 
