@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - GitJobs</title>
 
     <environment include="Development">
+        <link rel="stylesheet" href="~/css/materialize.css" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     </environment>
     <environment exclude="Development">
@@ -67,7 +68,7 @@
                 integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
         </script>
     </environment>
-    @* <script src="~/js/site.js" asp-append-version="true"></script> *@
+    <script src="~/js/materialize.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

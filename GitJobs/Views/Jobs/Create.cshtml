@@ -2,24 +2,27 @@
   ViewData["Title"] = "Create";
 }
 
-<h1>SAVE THIS JOB:</h1>
+<div class="container">
+  <h1>SAVE THIS JOB:</h1>
+</div>
 <hr/>
-<div class="box">
-  @using (Html.BeginForm("Create", "Jobs", FormMethod.Post))
-  {
-
-    <label for="tit">Title:</label>
-    <input class="createform" id="tit" name="tit" type="text" value="@ViewBag.Tit"><br>
-    <label for="loc">Location:</label>
-    <input class="createform" id="loc" name="loc" type="text" value="@ViewBag.Location"><br>
-    <label for="desc">Description:</label>
-    <input class="createform" id="desc" name="desc" type="text" value="@ViewBag.Description"><br>
-    <label for="ur">Url:</label>
-    <input class="createform" id="ur" name="ur" type="text" value="@ViewBag.Url"><br>
-    <label for="sta">Application Status:</label>
-    <input class="createform" id="sta" name="sta" type="text"><br>
-    <label for="pri">Priority Level (1-5):</label>
-    <input class="createform" id="pri" name="pri" type="text"><br>
-    <button type="submit" class="btn">SAVE THIS JOB</button>
-  }
+<div class="container">
+  <div class="card-panel #424242 grey darken-3">
+    @using (Html.BeginForm("Create", "Jobs", FormMethod.Post))
+    {
+      <p class="z-depth-3"><label for="tit">Title:</label></p>
+      <input class="createform" id="tit" name="tit" type="text" value="@ViewBag.Tit"><br>
+      <p class="z-depth-3"><label for="loc">Location:</label></p>
+      <input class="createform" id="loc" name="loc" type="text" value="@ViewBag.Location"><br>
+      <p class="z-depth-3"><label for="desc">Description:</label></p>
+      <input class="createform" id="desc" name="desc" type="text" value="@ViewBag.Description"><br>
+      <p class="z-depth-3"><label for="ur">Url:</label></p>
+      <input class="createform" id="ur" name="ur" type="text" value="@ViewBag.Url"><br>
+      <p class="z-depth-3"><label for="sta">Application Status:</label></p>
+      <input class="createform" id="sta" name="sta" type="text"><br>
+      <p class="z-depth-3"><label for="pri">Priority Level (1-5):</label></p>
+      <input class="createform" id="pri" name="pri" type="text"><br>
+      <button type="submit" class="btn">SAVE THIS JOB</button>
+    }
+  </div>          
 </div>

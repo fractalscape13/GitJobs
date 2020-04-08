@@ -1,0 +1,26 @@
+@{
+  ViewData["Title"] = "Edit";
+}
+
+@model GitJobs.Models.Job
+
+<div class="container">
+  @using (Html.BeginForm("Edit", "Jobs", FormMethod.Post))
+  {
+    @Html.HiddenFor(model => model.JobId)
+
+    @Html.LabelFor(model => model.Title)
+    @Html.EditorFor(model => model.Title)<br>
+    @Html.LabelFor(model => model.Location)
+    @Html.EditorFor(model => model.Location)<br>
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)<br>
+    @Html.LabelFor(model => model.Url)
+    @Html.EditorFor(model => model.Url)<br>
+    @Html.LabelFor(model => model.Status)
+    @Html.EditorFor(model => model.Status)<br>
+    @Html.LabelFor(model => model.Priority)
+    @Html.EditorFor(model => model.Priority)<br>
+    <button type="submit" class="btn">SAVE CHANGES</button>
+  }
+</div>
