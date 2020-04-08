@@ -34,7 +34,10 @@
       
       @using (Html.BeginForm("Create", "Jobs", FormMethod.Get))
       {
-        @Html.Hidden("model", @job)
+        @Html.Hidden("title1", @job.Title)
+        @Html.Hidden("location1", @job.Location)
+        @Html.Hidden("description1", @job.Description)
+        @Html.Hidden("url1", @job.Url)
         
         <input type="submit" value="Add this job" class="btn"/>
       } 
