@@ -5,10 +5,14 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-size: 150%;
-  background: -webkit-linear-gradient(rgb(247, 246, 246), rgb(14, 13, 13));
+  font-size: 160%;
+  background: -webkit-linear-gradient(rgb(255, 254, 254), rgb(14, 13, 13));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+a.navbar-brand:hover {
+  opacity: .6;
 }
 
 /* Sticky footer styles
@@ -85,7 +89,8 @@ input {
   background-image: radial-gradient(rgb(138, 137, 137), rgb(18, 18, 155));
   color: ivory;
   margin: 25px;
-  font-size: 140%;
+  font-size: 100%;
+  padding-bottom: 10px;
 }
 
 .btn:hover {
@@ -93,7 +98,7 @@ input {
   opacity: .8;
 }
 
-ol#reviewsList {
+.scrollable {
   max-height: 800px;
   overflow-y: auto;
 }
@@ -133,6 +138,22 @@ li a:hover {
   border-radius: 15px;
 }
 
+.boxform
+{
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.404);
+  color: indigo;
+}
+
+.boxform input {
+  color: rgb(64, 21, 95);
+}
+
+.boxform label {
+  color: rgb(42, 3, 70);
+}
+
 .two-buttons, .three-buttons {
   display: flex;
   justify-content: space-between;
@@ -152,29 +173,65 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+
+#business-gif {
+  max-height: 300px;
+  border-radius: 15px;
+  margin: 30px;
+}
 /* below is for social sharing buttons */
 
-.socialsharing {
-  text-align: center;
 
-  a {
-      display: inline-block;
-      padding: .7em;
-      line-height: 0;
-      margin-bottom: 2em;
-  }
-
-  path {
-      fill: gray;
-  }
-
-  svg {
-      width: 24px;
-      height: 24px;
-  }
-}
 
 .createform {
   width: 100%;
+}
+
+
+
+
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.social {
+  margin-top: 30px;
 }
 

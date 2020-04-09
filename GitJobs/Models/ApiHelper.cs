@@ -13,10 +13,10 @@ namespace GitJobs.Models
       return response.Content;
     }
 
-    public static async Task<string> Search(string description, string location, string title)
+    public static async Task<string> Search(string location, string title)
     {
       RestClient client = new RestClient("http://jobs.github.com/positions.json");
-      RestRequest request = new RestRequest($"?description={description}&location={location}&title={title}", Method.GET);
+      RestRequest request = new RestRequest($"?location={location}&title={title}", Method.GET);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }

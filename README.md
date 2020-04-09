@@ -1,19 +1,28 @@
 # GitJobs
 
-#### _MVC application for searching GitHub's Jobs API_
+#### _Web application for finding and saving job listings with GitHub's Jobs API_
 
 #### By: **Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov**, April 7-9, 2020
 
 ## Description
 
-_This MVC application ._
+_A C# MVC application that allows job seekers to search, save, and organize job opportunities utilizing the GitHub Jobs API, ASP.NET Core Identity to manage users, passwords, and profile information and a SQL database for storing data._
 
 ## Specification user stories:
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| User visit GitJobs home page and the program displays welcome message along with buttons to **search jobs** and **view account**| User types a http://localhost:5000/ into their web browser | http://localhost:5000/ |
+| User clicks **search jobs** button and the application displays a jobs homepage with a search jobs input form on the left and a list of jobs that meet the search requirements on the right| User clicks **search jobs** button | http://localhost:5000/Jobs |
+| User submits search and clicks the **add this job** button on a job post from the list of queried results | User submits search and clicks the **add this job** button | http://localhost:5000/Jobs/Create |
+| If the user is not logged in the application will redirect to the account homepage where they can click the **register** button or enter their user details and click the **log in** button | N/A | http://localhost:5000/Account |
+| User clicks the **register** button and the application displays a registration form with inputs for username, password, confirm password, and a **register** button | User clicks the **register** button | http://localhost:5000/Account/Register |
+| User completes a form and clicks the **register** button and is redirected back to the account homepage and the application displays a welcome message along with three buttons (**see all jobs**, **see saved jobs**, and **log out**) | User clicks the **register** button | http://localhost:5000/Account |
+| If a user clicks **log out** button, the user will be logged out of their account and redirected to the account homepage| User clicks **log out** button | http://localhost:5000/Account |
+| If a user clicks **see all jobs** button, the application will redirect to the jobs homepage where they can now successfully save jobs to their account | User clicks **see all jobs** button | http://localhost:5000/Jobs |
+| If a logged in user clicks **add this job** button, app will navigate to confirmation form where a user can add notes regarding application status and priority level  | User clicks **add this job** button | http://localhost:5000/Jobs/Create |
+| If a user clicks **see saved jobs** button, the application will display a list of jobs the user has saved with the following details (title, location, application status, and a view posting link) as well as buttons to **delete this job** and **edit this job** | User clicks **see saved jobs** button | http://localhost:5000/Account/SavedJobs |
+| User clicks the **edit this job** button and the application displays a form with job details based on its job id and the ability to update the job's title, location, url, status, priority, and a **save changes** button | User clicks the **edit this job** button | http://localhost:5000/Account/Edit |
+| User clicks **delete this job** button and is redirected to a delete confirmation page and the application displays the title and location of the job based on the job id, a **confirm delete** button, and a **back to saved jobs** button | User clicks **delete this job** button | http://localhost:5000/Account/Delete/ |
 
 ## Setup/Installation Requirements
 
@@ -78,6 +87,7 @@ _Run this MVC application by entering the following command in Terminal (macOS) 
 
 _To view/edit the source code of this application, open the contents of the GitJobs directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the GitJobs directory)._
 
+## Routes
 
 ACCOUNT
 ```

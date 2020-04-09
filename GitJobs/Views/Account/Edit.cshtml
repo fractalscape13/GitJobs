@@ -4,7 +4,7 @@
 
 @model GitJobs.Models.Job
 
-<div class="container">
+<div class="container boxform">
   @using (Html.BeginForm("Edit", "Jobs", FormMethod.Post))
   {
     @Html.HiddenFor(model => model.JobId)
@@ -13,8 +13,6 @@
     @Html.EditorFor(model => model.Title)<br>
     @Html.LabelFor(model => model.Location)
     @Html.EditorFor(model => model.Location)<br>
-    @Html.LabelFor(model => model.Description)
-    @Html.EditorFor(model => model.Description)<br>
     @Html.LabelFor(model => model.Url)
     @Html.EditorFor(model => model.Url)<br>
     @Html.LabelFor(model => model.Status)

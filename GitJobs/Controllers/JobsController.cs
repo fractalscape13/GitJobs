@@ -27,21 +27,20 @@ namespace GitJobs.Controllers
     }
 
     [Authorize]
-    public IActionResult Create(string title1, string location1, string description1, string url1)
+    public IActionResult Create(string title1, string location1, string url1)
     {
       ViewBag.Tit = title1;
       ViewBag.Location = location1;
-      ViewBag.Description = description1;
       ViewBag.Url = url1;
       return View();
     }
 
     [HttpPost]
-    public async Task<ActionResult> Create(string desc, string loc, string tit, string ur, string sta, int pri)
+    public async Task<ActionResult> Create(string loc, string tit, string ur, string sta, int pri)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      Job newJob = new Job(desc, loc, tit, ur, sta, pri);
+      Job newJob = new Job(loc, tit, ur, sta, pri);
       newJob.User = currentUser;
       _db.Jobs.Add(newJob);
       _db.SaveChanges();
@@ -49,9 +48,9 @@ namespace GitJobs.Controllers
     }
 
     [AllowAnonymous]
-    public IActionResult Search(string description, string location, string title)
+    public IActionResult Search(string location, string title)
     {
-      var searchResults = Job.Search(description, location, title);
+      var searchResults = Job.Search(location, title);
       return View("Index", searchResults);
     }
   }

@@ -3,7 +3,6 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +17,6 @@ namespace GitJobs.Models
   public class Job
   {
     public int JobId { get; set; }
-    public string Description { get; set; }
     public string Location { get; set; }
     public string Title { get; set; }
     public string Url { get; set; }
@@ -30,9 +28,8 @@ namespace GitJobs.Models
     {
       
     }
-    public Job(string description, string location, string title, string url, string status, int priority)
+    public Job(string location, string title, string url, string status, int priority)
     {
-      this.Description = description;
       this.Location = location;
       this.Title = title;
       this.Url = url;
@@ -52,9 +49,9 @@ namespace GitJobs.Models
       return jobList;
     }
 
-    public static List<Job> Search(string description, string location, string title)
+    public static List<Job> Search(string location, string title)
     {
-      var apiCallTask = ApiHelper.Search(description, location, title);
+      var apiCallTask = ApiHelper.Search(location, title);
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
