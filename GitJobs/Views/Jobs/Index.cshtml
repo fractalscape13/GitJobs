@@ -10,8 +10,6 @@
         <input id="title" name="title" type="text"><br>
         <label for="location">Location:</label>
         <input id="location" name="location" type="text"><br>
-        <label for="description">Description:</label>
-        <input id="description" name="description" type="text"><br>
       <button type="submit" class="btn">SEARCH</button>
       </form>
       <br>
@@ -36,7 +34,6 @@
       {
         @Html.Hidden("title1", @job.Title)
         @Html.Hidden("location1", @job.Location)
-        @Html.Hidden("description1", @job.Description)
         @Html.Hidden("url1", @job.Url)
         
         <input type="submit" value="Add this job" class="btn"/>
