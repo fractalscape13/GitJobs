@@ -8,6 +8,8 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/css/materialize.css" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,6 +18,8 @@
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
     </environment>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="~/js/site.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -29,8 +33,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">My Account</a>
                         </li>
-                        <li class="nav-item">
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -43,12 +45,6 @@
         </main>
     </div>
 
-    <footer class="border-top footer">
-        <div class="container">
-        @{await Html.RenderPartialAsync("_SocialSharing", ViewData["Title"]);}
-            &copy; 2020 - GitJobs 
-        </div>
-    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -72,4 +68,41 @@
 
     @RenderSection("Scripts", required: false)
 </body>
+    <footer class="border-top footer">
+        <div class="container">
+
+        <div class="social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-reddit"></a>
+        </div>
+
+        
+            <div class="row">
+                <div class="col-md-4">
+                    <address>
+                        <strong>GitJobs Inc.</strong><br>
+                        600 Main St, Suite 800<br>
+                        Portland, Or 97204<br>
+                        <abbr title="Phone">Phone:</abbr> (123) 456-7890
+                    </address>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#">Register</a><br>
+                    <a href="#">Login</a><br>
+                    <a href="#">View Jobs</a><br>
+                </div>
+
+                 <div class="col-md-4">
+                    <a href="#">Register</a><br>
+                    <a href="#">Login</a><br>
+                    <a href="#">View Jobs</a><br>
+                </div>
+            </div>
+            &copy; 2020 - GitJobs 
+        </div>
+    </footer>
 </html>

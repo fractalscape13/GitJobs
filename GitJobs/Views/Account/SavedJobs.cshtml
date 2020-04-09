@@ -5,7 +5,7 @@
 
 <h1>YOUR SAVED JOBS</h1>
 <hr />
-<div class="box">
+<div class="box scrollable">
   @if (User.Identity.IsAuthenticated)
   {
     //Show list of user's saved jobs
@@ -26,5 +26,5 @@
     }
 
   }
-  @Html.ActionLink("See All Jobs", "Index", "Jobs", null, new { @class="btn" })
 </div>
+@Html.ActionLink("Find More Jobs", "Index", "Jobs", null, new { @class="btn" })

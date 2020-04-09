@@ -7,18 +7,18 @@
 </div>
 <hr/>
 <div class="container">
-  <div class="card-panel #424242 grey darken-3">
+  <div class="boxform">
     @using (Html.BeginForm("Create", "Jobs", FormMethod.Post))
     {
-      <p class="z-depth-3"><label for="tit">Title:</label></p>
+      <label for="tit">Title:</label>
       <input class="createform" id="tit" name="tit" type="text" value="@ViewBag.Tit"><br>
-      <p class="z-depth-3"><label for="loc">Location:</label></p>
+      <label for="loc">Location:</label>
       <input class="createform" id="loc" name="loc" type="text" value="@ViewBag.Location"><br>
-      <p class="z-depth-3"><label for="ur">Url:</label></p>
+      <label for="ur">Url:</label>
       <input class="createform" id="ur" name="ur" type="text" value="@ViewBag.Url"><br>
-      <p class="z-depth-3"><label for="sta">Application Status:</label></p>
+      <label for="sta">Application Status:</label>
       <input class="createform" id="sta" name="sta" type="text"><br>
-      <p class="z-depth-3"><label for="pri">Priority Level (1-5):</label></p>
+      <label for="pri">Priority Level (1-5):</label>
       <input class="createform" id="pri" name="pri" type="text"><br>
       <button type="submit" class="btn">SAVE THIS JOB</button>
     }
