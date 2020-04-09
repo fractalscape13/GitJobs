@@ -103,7 +103,8 @@ namespace GitJobs.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      List<Job> model = _db.Jobs.Where(job => job.User == currentUser).ToList();
+      List<Job> jobList = _db.Jobs.Where(job => job.User == currentUser).ToList();
+      List<Job> model = jobList.OrderBy(x => x.Priority).ToList();
       return View(model);
     }
 
