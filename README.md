@@ -2,13 +2,13 @@
 
 #### _Web application for finding and saving job listings with GitHub's Jobs API_
 
-#### By: **Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov**, April 7-9, 2020
+#### By: **Joseph Wangemann, Benjamin Thom, Zakkrey Short, Hristo Dzhambov**, April 7-9, 2020
 
 ## Description
 
 _A C# MVC application that allows job seekers to search, save, and organize job opportunities utilizing the GitHub Jobs API, ASP.NET Core Identity to manage users, passwords, and profile information and a SQL database for storing data._
 
-## Specification user stories:
+## Specifications / User Stories:
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
 | User visit GitJobs home page and the program displays welcome message along with buttons to **search jobs** and **view account**| User types a http://localhost:5000/ into their web browser | http://localhost:5000/ |
@@ -113,8 +113,6 @@ GET /positions/ID.json
 ```
 
 ## Technologies Used
-
-* Git
 * C#
 * .NET Core 2.2
 * MySQL 8.0.15
@@ -126,7 +124,6 @@ GET /positions/ID.json
 * GitHub Jobs API (https://jobs.github.com/api)
 
 ## License
-
 Licensed under the MIT license.
 
-&copy; 2020 - Benjamin Thom, Joseph Wangemann, Zakkrey Short, Hristo Dzhambov
+&copy; 2020 - Joseph Wangemann, Benjamin Thom, Zakkrey Short, Hristo Dzhambov
